@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { BsTrash } from "react-icons/bs";
+import { useDataContext } from "../components/DataProvider";
 
 export const TodoItem = ({ title, id, completed }) => {
+
   const [checked, setChekced] = useState(completed);
+  const {removeTodo, toggleTodo} = useDataContext()
 
   const cls = ["completed"];
   if (checked) {
@@ -18,10 +21,13 @@ export const TodoItem = ({ title, id, completed }) => {
           // defaultChecked={false}
           className="cursor-pointer"
           checked={checked}
-          onChange={() => setChekced(!checked)}
+          // onChange={() => setChekced(!checked)}
+          onChange={() => toggleTodo(id)}
         />
         <span>{title}</span>
-        <BsTrash className=" text-gray-500 hover:text-gray-400 cursor-pointer" />
+        <BsTrash className=" text-gray-500 hover:text-gray-400 cursor-pointer"
+        onClick={()=>removeTodo(id)}
+        />
       </label>
     </li>
   );

@@ -1,11 +1,12 @@
-import { useEffect } from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 import { TodoList } from "../todo/TodoList";
+import { useDataContext } from "./DataProvider";
 
 export const State = () => {
-  const [todos, setTodos] = useState([]);
-  const [todoTitle, setTodoTitle] = useState("");
-  // { id: 1, title: "First Todo", completed: false },
+const  {todos, setTodos, todoTitle, setTodoTitle} = useDataContext()
+  
+// { id: 1, title: "First Todo", completed: false },
   // { id: 2, title: "Second Todo", completed: false },
 
 useEffect(()=>{
@@ -29,6 +30,7 @@ useEffect(()=>{
       setTodoTitle(""); // clear input
     }
   };
+
 
   return (
     <div className="w-full flex column justify-center">
