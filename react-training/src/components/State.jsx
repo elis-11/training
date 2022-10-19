@@ -9,13 +9,13 @@ export const State = () => {
 
   const [todoTitle, setTodoTitle] = useState("");
 
-  const addTodo = (e) => {
-    if (e.key === "Enter") {
+  const addTodo = (e) => {    // create Todo
+    if (e.key === "Enter") {    // if drop Enter
       setTodos([
-        ...todos,
-        { id: Date.now(), title: todoTitle, completed: false },
+        ...todos,               // all old Todos
+        { id: Date.now(), title: todoTitle, completed: false },   // data für new Todo
       ]);
-      setTodoTitle('')
+      setTodoTitle('')    // clear input
     }
   }; 
 
