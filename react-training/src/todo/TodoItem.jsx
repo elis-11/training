@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsTrash } from "react-icons/bs";
-import { useDataContext } from "../components/DataProvider";
+import { useDataContext } from "./DataProvider";
 
 export const TodoItem = ({ title, id, completed }) => {
 

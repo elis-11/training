@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { TodoList } from "../todo/TodoList";
+import { TodoList } from "./TodoList";
 import { useDataContext } from "./DataProvider";
 
-export const State = () => {
+export const Todo = () => {
 const  {todos, setTodos, todoTitle, setTodoTitle} = useDataContext()
   
 // { id: 1, title: "First Todo", completed: false },

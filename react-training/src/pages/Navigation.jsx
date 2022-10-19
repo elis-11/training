@@ -8,8 +8,8 @@ export const Navigation = () => {
         <Link to="/" className="mr-2 active-red-300">
           Home
         </Link>
-        <Link to="/state" className="mr-2 active-red-300">
-          State
+        <Link to="/todo" className="mr-2 active-red-300">
+          Todo
         </Link>
         <Link to="/state1" className="mr-2 active-red-300">
           State1
