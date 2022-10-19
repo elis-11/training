@@ -5,7 +5,7 @@ export const Navigation = () => {
     <nav className="flex justify-between items-center font-bold h-[5rem] px-5 shadow-md bg-gray-200 text-white text-lg">
       <h3 className="">React Hooks</h3>
       <span className="font-bold">
-        <Link to="/" end className="mr-2 active-red-300">
+        <Link to="/" className="mr-2 active-red-300">
           Home
         </Link>
         <Link to="/state" className="mr-2 active-red-300">
