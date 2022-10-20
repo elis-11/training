@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+function State3() {
   const [numbers, setNumbers] = useState([1, 2]);
 
   const addNumber = () => {
@@ -13,7 +12,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="State3">
       <button onClick={addNumber}>New Number </button>
       <ul>
         {numbers.map((num, index) => (
@@ -26,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default State3;
