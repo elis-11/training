@@ -8,33 +8,33 @@ export class List extends React.Component {
 
   addRandomNumber = () => {
     const randNumber = Math.round(Math.random() * 10);
-    this.setState({ 
+    this.setState({
       numbers: [...this.state.numbers, randNumber],
     });
   };
 
   componentDidMount() {
-    console.log('Component mounted!');
+    console.log("Component mounted!");
   }
 
-  componentDidUpdate(prevProps, prevState){
+  componentDidUpdate(prevProps, prevState) {
     // console.log(prevProps, prevState, this.props, this.state);
-    if (this.state.numbers.length !== prevState.numbers.length){
-      console.log('List of numbers is updated!');
+    if (this.state.numbers.length !== prevState.numbers.length) {
+      console.log("List of numbers is updated!");
     }
   }
 
   componentWillUnmount() {
-    console.log('Component will delete');
+    console.log("Component will delete");
   }
-  
+
   render() {
     return (
       <div>
         <button onClick={this.addRandomNumber}>New Number </button>
         <div>
           {this.state.numbers.map((num, index) => (
-            <div style={{ borderBottom: "2px solid gray" }} key={index}>
+            <div style={{ borderBottom: "2px solid lavender" }} key={index}>
               {num}
             </div>
           ))}
