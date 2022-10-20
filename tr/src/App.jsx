@@ -1,29 +1,17 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Class } from "./classes/Class";
+import { Navbar } from "./components/Navbar";
+import { Hooks } from "./hooks/Hooks";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
-  const [numbers, setNumbers] = useState([1, 2]);
-
-  const addNumber = () => {
-    const randNumber = Math.round(Math.random() * 10);
-    setNumbers([...numbers, randNumber]);
-    //  setNumbers([ ])  // clear display
-    console.log(numbers);
-  };
-
+export const App = () => {
   return (
     <div className="App">
-      <button onClick={addNumber}>New Number </button>
-      <ul>
-        {numbers.map((num, index) => (
-          <div style={{ borderBottom: "2px solid gray" }} key={index}>
-            {num}
-          </div>
-        ))}
-      </ul>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Hooks />} />
+        <Route path="/class" element={<Class />} />
+      </Routes>
     </div>
   );
-}
-
-export default App;
+};
