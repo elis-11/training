@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { List } from "./List";
 import "../App.css";
+import { List } from "./List";
 
-export const Class = () => {
+export const Hooks = () => {
   const [visible, setVisible] = useState(true);
 
   // const toggleVisible = () =>{
@@ -14,18 +14,10 @@ export const Class = () => {
     <div className="App">
       {visible && <List />}
       {/* <button type='button' onClick={toggleVisible}>Show /  Hide</button> */}
+      {/* <button type='button' onClick={()=> setVisible(!visible)}>Show /  Hide</button> */}
       <button type="button" onClick={() => setVisible(!visible)}>
         {visible ? "Hide" : "Show"}
       </button>
-      {/* {visible ? (
-        <button type="button" onClick={() => setVisible(!visible)}>
-          Hide
-        </button>
-      ) : (
-        <button type="button" onClick={() => setVisible(!visible)}>
-          Show
-        </button>
-      )} */}
     </div>
   );
 };
