@@ -31,7 +31,7 @@ export class List extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.addRandomNumber}>New Number </button>
+        <button className='border-2 px-6 bg-rose-100 p-2 m-5' onClick={this.addRandomNumber}>New Number </button>
         <div>
           {this.state.numbers.map((num, index) => (
             <div style={{ borderBottom: "2px solid lavender" }} key={index}>

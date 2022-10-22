@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav style={{ margin: "0 3rem", }}>
-      <Link to="/" style={{ margin: "3rem", color: "green", fontWeight: 'bold' }}>
+    <nav className=" h-[5rem] px-5 mb-[3rem] shadow-md bg-slate-200">
+
+      <span className='flex justify-between items-center font-bold '>
+      <Link to="/">
         Class
       </Link>
-      <Link to="/hooks" style={{ margin: "3rem", color: "green", fontWeight: 'bold' }}>
-        Hooks
+      <Link to="/effect">
+        Effect
       </Link>
-      <Link to="/ref" style={{ margin: "3rem", color: "green", fontWeight: 'bold' }}>
+      <Link to="/ref">
         Ref
       </Link>
+      </span>
     </nav>
   );
 };

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { List } from "./List";
-import "../App.css";
 
 export const Class = () => {
   const [visible, setVisible] = useState(true);
@@ -9,23 +8,20 @@ export const Class = () => {
   // setVisible(visible => !visible)
   // setVisible(!visible)
   // }
+  {
+    /* <button type='button' onClick={toggleVisible}>Show /  Hide</button> */
+  }
 
   return (
-    <div className="App">
+    <div className="flex justify-center">
+      <div>
       {visible && <List />}
-      {/* <button type='button' onClick={toggleVisible}>Show /  Hide</button> */}
-      <button type="button" onClick={() => setVisible(!visible)}>
-        {visible ? "Hide" : "Show"}
-      </button>
-      {/* {visible ? (
-        <button type="button" onClick={() => setVisible(!visible)}>
-          Hide
+      </div>
+      <div>
+        <button className='border-2 px-6 bg-rose-100 p-2 m-5' type="button" onClick={() => setVisible(!visible)}>
+          {visible ? "Hide" : "Show"}
         </button>
-      ) : (
-        <button type="button" onClick={() => setVisible(!visible)}>
-          Show
-        </button>
-      )} */}
+      </div>
     </div>
   );
 };

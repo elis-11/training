@@ -32,11 +32,14 @@ export const List = () => {
   }, []);
 
   return (
-    <div>
-      <h2>{count}</h2>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={addNumber}>New Number </button>
+    <div className='flex flex-col items-center justify-center'>
+      <span className='flex justify-evenly font-bold text-lg mb-7'>
+      <button className='border-2 px-6 bg-rose-100' onClick={() => setCount(count + 1)}>+</button>
+      <h2 className='mx-7'>{count}</h2>
+      <button className='border-2 px-6 bg-rose-100' onClick={() => setCount(count + 1)}>-</button>
+      </span>
       <div>
+      <button className='border-2 px-6 bg-rose-100 p-2 m-5' onClick={addNumber}>New Number </button>
         {numbers.map((num, index) => (
           <div
             key={index}

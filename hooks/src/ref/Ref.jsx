@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../App.css";
 
 export const Ref = () => {
   const [numbers, setNumbers] = useState([1, 2]);
