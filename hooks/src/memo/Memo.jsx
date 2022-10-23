@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Count } from "./Count";
-import { IsFive } from "./IsFive";
+import Count from "./Count";
+import IsFive from "./IsFive";
 
 export const Memo = () => {
   const [count1, setCount1] = useState(0);

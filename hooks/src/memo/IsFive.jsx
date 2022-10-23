@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 
 let renderCount = 0;
 
-export const IsFive = ({ value }) => {
+export default React.memo(function IsFive ({ value }) {
   console.warn(`isFive render: ${++renderCount}`);
 
   // const getResult = () => {       //without useMemo
@@ -19,4 +19,4 @@ export const IsFive = ({ value }) => {
 
   // return <h3>{getResult()}</h3>;  //without useMemo
   return <h3>{getResult}</h3>;
-};
+});
