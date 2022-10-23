@@ -17,6 +17,9 @@ export const Navbar = () => {
       <Link to="/reftimer">
       RefTimer
       </Link>
+      <Link to="/memo">
+      Memo
+      </Link>
       </span>
     </nav>
   );

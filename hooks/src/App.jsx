@@ -4,6 +4,7 @@ import { Navbar } from "./Navbar";
 import { Ref } from "./ref/Ref";
 import { Effect } from "./effect/Effect";
 import { RefTimer } from "./reftimer/RefTimer";
+import { Memo } from "./memo/Memo";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path="/effect" element={<Effect />} />
         <Route path="/ref" element={<Ref />} />
         <Route path="/reftimer" element={<RefTimer />} />
+        <Route path="/memo" element={<Memo />} />
       </Routes>
     </div>
   );
