@@ -17,6 +17,12 @@ export const Navbar = () => {
       <Link to="/reftimer">
       RefTimer
       </Link>
+      <Link to="/usecallback">
+      UseCallback
+      </Link>
+      <Link to="/ucallback">
+      UCallback
+      </Link>
       <Link to="/memo">
       Memo
       </Link>
