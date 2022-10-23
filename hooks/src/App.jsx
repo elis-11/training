@@ -7,6 +7,7 @@ import { RefTimer } from "./reftimer/RefTimer";
 import { Memo } from "./memo/Memo";
 import { UseCallback } from "./usecallback/UseCallback";
 import { UCallback } from "./ucallback/UCallback";
+import { State1 } from "./state/State1";
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Class />} />
+        <Route path="/state1" element={<State1 />} />
         <Route path="/effect" element={<Effect />} />
         <Route path="/ref" element={<Ref />} />
         <Route path="/reftimer" element={<RefTimer />} />
