@@ -13,6 +13,7 @@ export const Navbar = () => {
         </Link>
         <Link to="/statepage">StatePage</Link>
         <Link to="/effectpage">EffectPage</Link>
+        <Link to="/reducerpage">ReducerPage</Link>
         <Link to="/mecall">MeCall</Link>
       </span>
     </nav>
