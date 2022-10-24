@@ -1,51 +1,13 @@
 import { useReducer } from "react";
+import { reducer } from "./reducer";
+import { increment, decrement } from "./actions";
 
-const DECREMENT = "decrement";
-const INCREMENT = "increment";
-
-const increment = (payload) => {
-  return {
-    type: INCREMENT,
-    payload,
-  };
-};
-const decrement = (payload) => {
-  return {
-    type: DECREMENT,
-    payload,
-  };
-};
-
-// const increment = (payload) => ({
-//   type: INCREMENT,
-//   payload,
-// });
-// const decrement = (payload) => ({
-//   type: DECREMENT,
-//   payload,
-// });
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case DECREMENT:
-      return {
-        counter: state.counter - action.payload,
-      };
-    case INCREMENT:
-      return {
-        counter: state.counter + action.payload,
-      };
-    default:
-      return { ...state };
-  }
-};
-
-export const Reducer3 = () => {
+export const Reducer4 = () => {
   const [state, dispatch] = useReducer(reducer, {
-    counter: 0,
+    counter: 1,
   });
 
-  return (
+  return ( 
     <div>
       <button
         className="border-2 px-6 bg-rose-100 p-2 m-5"
