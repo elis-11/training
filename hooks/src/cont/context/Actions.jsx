@@ -3,10 +3,10 @@ import { Card } from "./Card";
 export const Actions = () => {
   return (
       <div className="flex justify-between">
-      <Card number={1} />
-      <Card number={2} />
-      <Card number={5} />
-      <Card number={10} />
+      <Card amound={1} />
+      <Card amound={2} />
+      <Card amound={5} />
+      <Card amound={10} />
     </div>
 
   );

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import Context from "./Context";
 
-export const Card = ({ number }) => {
+export const Card = ({ amound }) => {
   const value = useContext(Context);
 
   const handleClick = () => {
-    value.countBooks(number);
+    value.countBooks(amound);
   };
 
   return (
@@ -17,7 +17,7 @@ export const Card = ({ number }) => {
           onClick={handleClick}
           className="bg-fuchsia-200 p-2"
         >
-          Buy {number} books
+          Buy {amound} books
         </button>
       </div>
     </div>
