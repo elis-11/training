@@ -9,7 +9,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const Reducer = () => {
+export const Reducer1 = () => {
   const [state, dispatch] = useReducer(reducer, {
     counter: 1,
   });

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { List } from "./List";
 
-export const Effect = () => {
+export const Effect1 = () => {
   const [visible, setVisible] = useState(true);
 
   // const toggleVisible = () =>{

@@ -4,7 +4,7 @@ import { Memo } from "../memo/Memo";
 import { UCallback } from "../ucallback/UCallback";
 import { UseCallback } from "../usecallback/UseCallback";
 
-export const MeCall = () => {
+export const MemoCallback = () => {
   return (
     <div>
       <nav>

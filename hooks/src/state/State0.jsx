@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const State = () => {
+export const State0 = () => {
 
 const [count1, setCount1] = useState(0)
 const [count2, setCount2] = useState(0)
