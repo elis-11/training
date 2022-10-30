@@ -3,27 +3,27 @@ import { useReducer } from "react";
 const DECREMENT = "decrement";
 const INCREMENT = "increment";
 
-const increment = (payload) => {
-  return {
-    type: INCREMENT,
-    payload,
-  };
-};
-const decrement = (payload) => {
-  return {
-    type: DECREMENT,
-    payload,
-  };
-};
+// const increment = (payload) => {
+//   return {
+//     type: INCREMENT,
+//     payload,
+//   };
+// };
+// const decrement = (payload) => {
+//   return {
+//     type: DECREMENT,
+//     payload,
+//   };
+// };
 
-// const increment = (payload) => ({
-//   type: INCREMENT,
-//   payload,
-// });
-// const decrement = (payload) => ({
-//   type: DECREMENT,
-//   payload,
-// });
+const increment = (payload) => ({
+  type: INCREMENT,
+  payload,
+});
+const decrement = (payload) => ({
+  type: DECREMENT,
+  payload,
+});
 
 const reducer = (state, action) => {
   switch (action.type) {
