@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 
 export const Reducer6 = () => {
-  const initialState = { count: 10 };
+  const initialState = { count: 0 };
 
   const reducer = (state, { type, payload = 1 }) => {
     switch (type) {
