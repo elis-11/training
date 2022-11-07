@@ -1,9 +1,9 @@
 //! 1- setTimeout() callback
-// for (let i = 0; i < 100; i++) {
-//   setTimeout(() => {
-//     console.log(i); // 0
-//   }, 0);
-// }
+for (let i = 0; i < 2; i++) {
+  setTimeout(() => {
+    console.log(i); // 0
+  }, 0);
+}
 
 //! 2- whay this function is working
 const a = "abc";
@@ -17,7 +17,7 @@ console.log(c); // abc
 //! 3.1- possibly change this array 'abc'
 let d = ["a,", "b", "d"];
 d[0] = "d";
-console.log(d.join(" ")); // d b c
+console.log(d.join(":")); // d b c
 
 //! 4- sum of elements
 const arr = [[1, 2, [3, 4]], [9], [10, 18]];
