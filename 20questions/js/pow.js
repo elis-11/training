@@ -19,3 +19,18 @@ const digPow = (n, p) => (k = [...'' + n].reduce((s, d) => s += d ** p++, 0) / n
  console.log(digPow(92, 1))
  console.log(digPow(695, 2))
  console.log(digPow(46288,3))
+ const rowSumOddNums = (j) => {
+    return Math.pow(j, 3);
+  };
+  const j = 2
+  console.log(rowSumOddNums(j));
+  const rowSumOddNumbers2 = (n) => Math.pow(n, 3);
+  
+  function rowSumOddNumbers3(n) {
+  //   return ( Math.pow(n, 3));   
+  //or
+    return n**3
+  }
+  const n = 3;
+  console.log(rowSumOddNumbers3(n));
+  
