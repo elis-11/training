@@ -20,8 +20,10 @@ d[0] = "d";
 console.log(d.join(":")); // d b c
 
 //! 4- sum of elements
+//! 4.1 recursive + sum  
+
+//! flat + reduce !!!
 const arr = [[1, 2, [3, 4]], [9], [10, 18]];
-//! 4.1 recursive + sum
 const result = arr.flat(Infinity).reduce((acc, next) => acc + next);
 console.log(result);
 //! 4.2 create methode 'flat' + sum
