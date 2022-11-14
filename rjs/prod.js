@@ -7,7 +7,7 @@ const prod = [
     {_id: "p6",status: "0",name: "Tomato",volume: 5,price: .5,category: "vegetable",inside: true,},
     {_id: "p7",status: "0",name: "Tomato",volume: 5,price: .5,category: "vegetable",inside: true,},  
 ]
-const total=prod.length
+const total = prod.length
 
 console.log('totalProducts:', total)
 
@@ -36,12 +36,8 @@ const count = names.reduce((all, name)=>{
 }, {})
 console.log(count) // { Lisa: 2, Igor: 2, Tiana: 1 }
 
-const products = [
-    {_id: "p1",status: "1",name: "Broccoli",volume: 7,price: 1.5,category: "vegetable",inside: false,},
-    {_id: "p2",status: "1",name: "Mango",volume: 8,price: 1,category: "fruit",inside: true,},
-    {_id: "p3",status: "1",name: "Philadelphia",volume: 12,price: 3.5,category: "cheese",inside: false,},
-    {_id: "p4",status: "1",name: "Tomato",volume: 5,price: .5,category: "vegetable",inside: true,},
-    {_id: "p5",status: "1",name: "Mango",volume: 8,price: 1,category: "fruit",inside: false,},
-    {_id: "p6",status: "0",name: "Tomato",volume: 5,price: .5,category: "vegetable",inside: true,},
-    {_id: "p7",status: "0",name: "Tomato",volume: 5,price: .5,category: "vegetable",inside: true,},  
-]
+const countProd = prod.reduce((products, prod)=> {
+    products[prod.name] = products[prod.name] ? products[prod.name] + 1 : 1
+    return products
+}, {})
+console.log('countProducts', countProd)
