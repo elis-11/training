@@ -50,15 +50,19 @@ const products = [
   { _id: "p4", name: "WM", price: 28, category: "premium" },
   { _id: "p5", name: "WK", price: 71, category: "premium" },
 ];
+console.log(products)
+
+// price of premium
 const categPrice = products.reduce(
   (acc, item) => (item.category === "premium" ? acc + item.price : acc),
   0
 );
 console.log(categPrice);
-
+// price of all products
 const countPrice = products.reduce((acc, item) => acc + item.price, 0);
 console.log(countPrice);
 
+// count premium products
 const categPrem = products.reduce(
   (acc, item) => (item.category === "premium" ? acc + 1 : acc),
   0
@@ -75,6 +79,9 @@ const fruits = [
   "mango",
   "orange",
 ];
+console.log(fruits)
+
+// count category of fruits
 const countFruits = fruits.reduce((allFruits, fruit) => {
   allFruits[fruit] = allFruits[fruit] ? allFruits[fruit] + 1 : 1;
   //   if (allFruits[fruit]) allFruits[fruit] += 1;
