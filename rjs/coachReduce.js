@@ -34,11 +34,11 @@ console.log(`countFilter: ${countFilter}`);
 
 // ! reduce 1
 countReduce = arr.reduce(
-  (acc, curr) => (curr.name === "Alice" ? acc + 1 : acc),
+  (total, item) => (item.name === "Alice" ? total + 1 : total),
   0
 );
-// countReduce = arr.reduce((acc, curr) => {
-//   return curr.name === "Alice" ? acc + 1 : acc
+// countReduce = arr.reduce((total, item) => {
+//   return item.name === "Alice" ? total + 1 : total
 // }, 0);
 console.log(`countReduce: ${countReduce}`);
 
@@ -54,20 +54,20 @@ console.log(products)
 
 // price of premium
 const categPrice = products.reduce(
-  (acc, item) => (item.category === "premium" ? acc + item.price : acc),
+  (total, item) => (item.category === "premium" ? total + item.price : total),
   0
 );
 console.log(categPrice);
-// price of all products
-const countPrice = products.reduce((acc, item) => acc + item.price, 0);
-console.log(countPrice);
 
 // count premium products
 const categPrem = products.reduce(
-  (acc, item) => (item.category === "premium" ? acc + 1 : acc),
+  (total, item) => (item.category === "premium" ? total + 1 : total),
   0
 );
 console.log(categPrem);
+// price of all products
+const countPrice = products.reduce((total, item) => total + item.price, 0);
+console.log(countPrice);
 
 // ! reduce 3 count all items together
 const fruits = [
@@ -84,8 +84,6 @@ console.log(fruits)
 // count category of fruits
 const countFruits = fruits.reduce((allFruits, fruit) => {
   allFruits[fruit] = allFruits[fruit] ? allFruits[fruit] + 1 : 1;
-  //   if (allFruits[fruit]) allFruits[fruit] += 1;
-  //   else allFruits[fruit] = 1;
   return allFruits;
 }, {});
 console.log(countFruits);
@@ -94,12 +92,6 @@ console.log(countFruits);
 const fruitsStat = {};
 fruits.forEach((item) => {
   fruitsStat[item] = fruitsStat[item] ? fruitsStat[item] + 1 : 1;
-  //  or
-  //   if (fruitsStat[item]) {
-  //     fruitsStat[item] += 1;
-  //   } else {
-  //     fruitsStat[item] = 1;
-  //   }
 }, {});
 console.log(fruitsStat);
 
@@ -109,7 +101,9 @@ const thinks = [
   { _id: "p2", name: "WS", price: 9, category: "basic" },
   { _id: "p3", name: "WR", price: 34, category: "premium" },
 ];
-const biggestThink = thinks.reduce((biggest, item) => {
-  return biggest.price > item.price ? biggest : item;
+const biggestThink = thinks.reduce((total, item) => {
+  return total.price > item.price ? total : item;
 });
 console.log(biggestThink);
+
+//---
