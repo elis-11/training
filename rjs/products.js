@@ -4,20 +4,15 @@ const prod = [
   {_id: "p3",status: "1",name: "Philadelphia",volume: 12,category: "cheese", price: 5.5,inside: false,},
   {_id: "p4",status: "1",name: "Tomato",volume: 5,category: "vegetable", price: .5,inside: true,},
   {_id: "p5",status: "1",name: "Mango",volume: 8,category: "fruit", price: 1.5,inside: true,},
-  {_id: "p6",status: "0",name: "Tomato",volume: 5,category: "vegetable", price: .5,inside: true,},
-  {_id: "p7",status: "0",name: "Tomato",volume: 5,category: "vegetable", price: .5,inside: true,},
+  {_id: "p6",status: "2",name: "Tomato",volume: 5,category: "vegetable", price: .5,inside: true,},
+  {_id: "p7",status: "2",name: "Tomato",volume: 5,category: "vegetable", price: .5,inside: true,},
   {_id: "p8",status: "1",name: "Tomato", volume: 5, category: 'vegetable', price: .5,inside: true, },
-  {_id: "p9",status: "0",name: "Apple", volume: 6, category: 'fruit', price: 1,inside: true, },
-  {_id: "p10",status: "0",name: "Mango", volume: 8, category: 'fruit', price: 1.5,inside: true, },
-
+  {_id: "p9",status: "2",name: "Apple", volume: 6, category: 'fruit', price: 1,inside: true, },
+  {_id: "p10",status: "2",name: "Mango", volume: 8, category: 'fruit', price: 1.5,inside: true, },
 ];
 // total products
 const products = prod.length
 console.log('products:', products);
-
-// count all prod = 7
-const countAll = prod.reduce((total, {status}) =>status === '1' ? total + 1 : total , 0);
-console.log("status:", countAll);
 
 // count volume = 70
 const countVolume = prod.reduce((total, item) => total + item.volume, 0);
@@ -32,10 +27,6 @@ console.log("countMangos:", countMangos);
 // count volume of concret items = 16
 const countConcVolume = prod.reduce((total, item) => item.name === "Mango" ? total + item.volume : total, 0);
 console.log("MangoVolume:", countConcVolume);
-
-// boolean true = 5
-const booleanProd = prod.reduce((total, { inside }) => total + inside, 0);
-console.log('booleanProd: ', booleanProd);
 
 const concretCategory = prod.reduce((total, item)=> item.category === 'vegetable' ? total + 1 : total, 0)
 console.log('concretCategory:', concretCategory)
@@ -54,6 +45,18 @@ const countProd = prod.reduce((total, item) =>{
 }, {})
 console.log('countProd:', countProd)
 
+// no double
+const noDouble = prod.reduce((total, item)=> !total.includes(item.name) ? [...total, item.name] : total, [])
+console.log('noDouble:', noDouble)
+
+// count all prod = 7
+const countAll = prod.reduce((total, {status}) =>status === '2'? total + 1 : total , 0);
+console.log("status:", countAll);
+
+// boolean true = 5
+const insideBoolean = prod.reduce((total, { inside }) => total + inside, 0);
+console.log('insideBoolean: ', insideBoolean);
+
 // find: fruit & cheese / boolean
 const addBoolean = prod.reduce((total, item)=>{
   total[item.name] = {
@@ -63,5 +66,6 @@ const addBoolean = prod.reduce((total, item)=>{
   return total
 }, {})
 console.log('addBoolean:', addBoolean)
+
 
 

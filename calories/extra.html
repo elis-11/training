@@ -1,0 +1,67 @@
+<center>
+
+<p>Fill out the form below.</p>
+
+<input type="radio" name="female" value="665.09" oninput="calsPerDay" ><p>Female</p>
+<input type="radio" name="male" value="66.47" oninput="calsPerDay" ><p>Male</p>
+<input id="age" type="number" oninput="calsPerDay"><p>Age</p><br>
+<input id="height" type="number" oninput="calsPerDay"><p> Height- In Inches (12 inches=1 foot)</p>
+<input id="weight" type="number" oninput="calsPerDay"><p> Weight (in pounds)</p><br>
+
+</center>
+<p id="totalCals"> </p> <p>kcal per day</p>
+
+function calsPerDay() {
+var age=document.getElementById("age").value;
+var height=document.getElementById("height").value;
+var weight=document.getElementById("weight").value;
+var female=document.getElementsByName("female").value;
+var male=document.getElementsByName("male").value;
+if (document.getElementsByName("male").checked) {
+var maleCals = male+ (13.75 * weight/2.2) + (5.0 * (height * 2.54) - (6.75 x age);
+document.getElementById("totalCals").innerHTML = maleCals; 
+} else (document.getElementsByName("female").checked) {
+var femaleCals = female + (9.56 * weight/2.2) + (1.84 * (height * 2.54) - (4.67 x age); 
+document.getElementById("totalCals").innerHTML = femaleCals;
+}
+}
+
+//!-----------
+<h1>Fill out the form below.</h1>
+<label>Female:
+  <input id="female" type="radio" name="gender" onchange="calsPerDay()">
+</label>
+<label>Male:
+  <input id="male" type="radio" name="gender" onchange="calsPerDay()" checked>
+</label>
+<label>Age:
+  <input id="age" type="number" oninput="calsPerDay()" value="50">
+  years
+</label>
+<label>Height:
+  <input id="height" type="number" oninput="calsPerDay()" value="70">
+  in inches (12 inches=1 foot)
+</label>
+<label>Weight:
+  <input id="weight" type="number" oninput="calsPerDay()" value="225">
+  in pounds
+</label>
+<label>
+  Base metabolic rate: <span id="totalCals"></span> kcal per day
+</label>
+
+// -------
+function calsPerDay() {
+    function find(id) { return document.getElementById(id) }
+  
+    var age = find("age").value
+    var height = find("height").value * 2.54
+    var weight = find("weight").value / 2.2
+    var result = 0
+    if (find("male").checked) 
+      result = 66.47 + (13.75 * weight) + (5.0 * height - (6.75 * age))
+    else if (find("female").checked)
+      result = 665.09 + (9.56 * weight) + (1.84 * height - (4.67 * age))
+    find("totalCals").innerHTML = Math.round( result )
+  }
+  calsPerDay()

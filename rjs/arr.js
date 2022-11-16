@@ -22,3 +22,19 @@ console.log('totalNums:', totalNums)
 
 const sumNums = nums.reduce((all, item)=> all + item, 0)
 console.log('sumNums:', sumNums)
+
+// filter + sum = REDUCE
+const numbers = [-5, 6, 2, 0];
+const filterSum = numbers.reduce((accumulator, currentValue) => {
+  if (currentValue > 0) {
+    const doubled = currentValue * 2;
+    return [...accumulator, doubled];
+  }
+  return accumulator;
+}, []);
+
+console.log('filterSum:', filterSum); // [12, 4]
+
+// brocken array
+console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
+console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
