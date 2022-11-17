@@ -25,15 +25,10 @@ function calculateCalorie(obj) {
     ret = ret * 4.1868;
   }
 
-  document.querySelector(".ans_calculate").innerHTML =
-    '<div class="container"><h4 class="text-center form-control my-3 text-danger fs-4">You should consume <span class="text-white">' +
-    Math.ceil(ret) +
-    " " +
-    unit +
-    "/day </span> of calorie to maintain your weight.</h4></div>";
+  document.querySelector(".ans_calculate").innerHTML = '<div class="container bg-dark py-3"><h4 class="text-center my-3 text-danger fs-4">You should consume <span class="text-dark">'+Math.ceil(ret)+' '+unit+'/day</span> of calorie to maintain your weight.</h4></div>'
 }
 
-function Mifflin(gender, age, bodyFat, height, weight) {
+function Mifflin(gender, age, height, weight) {
   let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
   if (gender == 1) {
     // Female
@@ -43,7 +38,7 @@ function Mifflin(gender, age, bodyFat, height, weight) {
   return BMR;
 }
 
-function Harris(gender, age, bodyFat, height, weight) {
+function Harris(gender, age, height, weight) {
   let BMR = 13.397 * weight + 4.799 * height - 5.677 * age + 88.362;
   if (gender == 1) {
     // Female
