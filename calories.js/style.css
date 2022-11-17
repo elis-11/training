@@ -1,14 +1,11 @@
-.form-control,
-.form-select,
-.card,
-.btn {
+.form-control, .form-select, .card, .btn {
   border-radius: 15px;
 }
 
 .form-control,
 .form-select {
   background: none;
-  /* color: #fff; */
+  color: #fff;
 }
 
 .form-select {
