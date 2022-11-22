@@ -48,3 +48,23 @@ const flattenConcat = [
 console.log(`flattenConcat: ${flattenConcat}`);
 const flSum = flattenConcat.reduce((total, item) => total + item);
 console.log(`flSum: ${flSum}`);
+
+//! unique
+let objArr = [
+  {
+    id: "123",
+  },
+  {
+    id: "123",
+  },
+  {
+    id: "456",
+  },
+];
+
+objArr = objArr.reduce(
+  (acc, cur) => [...acc.filter((obj) => obj.id !== cur.id), cur],
+  []
+);
+console.log(objArr)
+

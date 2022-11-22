@@ -1,10 +1,10 @@
 //! How reduce() works without an initial value
 
 const array = [15, 16, 17, 18, 19];
-function reducer(acc, curr, index) {
-  const result = acc + curr;
+function reducer(total, item, index) {
+  const result = total + item;
   console.log(
-    `acc: ${acc}, curr: ${curr}, index: ${index}, result: ${result}`,
+    `total: ${total}, item: ${item}, index: ${index}, result: ${result}`,
   );
   return result;
 }
@@ -13,7 +13,7 @@ array.reduce(reducer);
 //! How reduce() works with an initial value
 
 const withInit = [15, 16, 17, 18, 19].reduce(
-  (acc, curr) => acc + curr,
+  (total, item) => total + item,
   10,
 );
 console.log(`withInit: ${withInit}`)
@@ -21,7 +21,7 @@ console.log(`withInit: ${withInit}`)
 //! Sum of values in an object array
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
-  (acc, curr) => acc + curr.x,
+  (total, item) => total + item.x,
   0,
 );
 console.log(sum); // 6
@@ -32,7 +32,7 @@ const flattened = [
   [2, 3],
   [4, 5],
 ].reduce(
-  (acc, curr) => acc.concat(curr),
+  (total, item) => total.concat(item),
   [],
 );
 console.log(`flattened is: ${flattened}`);
@@ -40,20 +40,17 @@ console.log(`flattened is: ${flattened}`);
 //! Flatten an array of arrays
 const arrFl = [[2,5],6,4,[[[3],4]]]
 console.log(`arrFl: ${arrFl}`);
-const flatSum = arrFl.flat(Infinity).reduce((acc, curr)=> acc + curr)
+const flatSum = arrFl.flat(Infinity).reduce((total, item)=> total + item)
 console.log(`flatSum: ${flatSum}`);
 
 //! Counting instances of values in an object
 const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
 
-const countedNames = names.reduce((allNames, name) => {
-  const currCount = allNames[name] ?? 0;
-  return {
-    ...allNames,
-    [name]: currCount + 1,
-  };
+const countedNames = names.reduce((total, item) => {
+  total[item] = total[item] ? total[item] + 1 : 1
+  return total
 }, {});
-console.log(countedNames)
+console.log('countedNames:', countedNames)
 // countedNames is:
 // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
@@ -64,11 +61,11 @@ const people = [
   { name: "Jane", age: 20 },
 ];
 function groupBy(objectArray, property) {
-  return objectArray.reduce((acc, obj) => {
+  return objectArray.reduce((total, obj) => {
     const key = obj[property];
-    const curGroup = acc[key] ?? [];
+    const curGroup = total[key] ?? [];
 
-    return { ...acc, [key]: [...curGroup, obj] };
+    return { ...total, [key]: [...curGroup, obj] };
   }, {});
 }
 const groupedPeople = groupBy(people, "age");
@@ -103,7 +100,7 @@ const friends = [
   // allbooks - list which will contain all friends' books +
   // additional list contained in initialValue
   const allbooks = friends.reduce(
-    (acc, curr) => [...acc, ...curr.books],
+    (total, item) => [...total, ...item.books],
     ["Alphabet"],
   );
   console.log(allbooks);
@@ -115,27 +112,38 @@ const friends = [
 
   //! Remove duplicate items in an array
 const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
-const myArrayWithNoDuplicates = myArray.reduce(
-  (acc, curr) => {
-    if (!acc.includes(curr)) {
-      return [...acc, curr];
+const noDoublec = myArray.reduce(
+  (total, item) => {
+    if (!total.includes(item)) {
+      return [...total, item];
     }
-    return acc;
+    return total;
   },
   [],
 );
 
-console.log(myArrayWithNoDuplicates);
+console.log(noDoublec);
 
 
 //! Replace .filter().map() with .reduce()
 const numbers = [-5, 6, 2, 0];
-const doubledPositiveNumbers = numbers.reduce((acc, curr) => {
-  if (curr > 0) {
-    const doubled = curr * 2;
-    return [...acc, doubled];
+const doubledPositiveNumbers = numbers.reduce((total, item) => {
+  if (item > 0) {
+    const doubled = item * 2;
+    return [...total, doubled];
   }
-  return acc;
+  return total;
 }, []);
 
 console.log(doubledPositiveNumbers); // [12, 4]
+
+//!
+const fruitsArr = ['apple', 'banana', 'banana', 'apple', 'apple']  // INPUT  
+// OUTPUT: New array with all apple items: ['apple','apple','apple']
+const reduceRes = fruitsArr.reduce((total, item) => {
+  if(!total.includes(item)){
+    return [...total, item]
+  }
+  return total
+}, [])
+console.log('reduceRes:', reduceRes) //  [ 'apple', 'banana' ]

@@ -82,9 +82,9 @@ const fruits = [
 console.log(fruits)
 
 // count category of fruits
-const countFruits = fruits.reduce((allFruits, fruit) => {
-  allFruits[fruit] = allFruits[fruit] ? allFruits[fruit] + 1 : 1;
-  return allFruits;
+const countFruits = fruits.reduce((total, item) => {
+  total[item] = total[item] ? total[item] + 1 : 1;
+  return total;
 }, {});
 console.log(countFruits);
 
