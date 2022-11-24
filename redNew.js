@@ -1,7 +1,8 @@
 const message = ["JavaScript ", "is ", "fun."];
 const readMessage = message.reduce((total, item) => total + item);
-console.log(message); // [ 'JavaScript ', 'is ', 'fun.' ]
-console.log(message.join("")); // JavaScript is fun.
+console.log('message:', message); // [ 'JavaScript ', 'is ', 'fun.' ]
+console.log('message.join:',message.join("")); // JavaScript is fun.
+console.log('readMessage:', readMessage)
 
 // 2  Sum of All Values of Array
 const numsSum = [1, 2, 3, 4, 5, 6];

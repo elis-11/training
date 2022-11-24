@@ -18,7 +18,7 @@ letters.forEach((item) => {
 console.log("forEachResult:", forEachResult.toUpperCase());
 
 const filteredArr = letters.filter((item) => item);
-console.log("filteredArr: ", filteredArr);
+console.log("filteredArr: ", filteredArr); // ['G', 'a', 'e', 'l',' ', 'F', 'r', 'e','i', 'r', 'e']
 
 //! 2
 // OUTPUT:  3
@@ -31,7 +31,7 @@ console.log("reduceE:", reduceE);
 const reduceEs = letters.reduce((total, item) => {
   return item === "e" ? total + item : total;
 }, []);
-console.log("reduceEs:", reduceEs); // 3
+console.log("reduceEs:", reduceEs); // eee
 
 //! 3
 
@@ -39,7 +39,7 @@ const countLetters = letters.reduce((total, item) => {
   total[item] = total[item] ? total[item] + 1 : 1 
 return total
 }, {} )
-console.log('countLetters:', countLetters)
+console.log('countLetters:', countLetters) // { G: 1, a: 1, e: 3, l: 1, ' ': 1, F: 1, r: 2, i: 1 }
 
 const fruits = ["apple", "apple", "banana", "apple"]; //INPUT
 //OUTPUT: { apple: 3, banana: 1 } // count up all items found

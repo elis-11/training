@@ -1,10 +1,4 @@
-//! while
-let input = 2;
-const arr = [];
-
-while (input >= 0.25) {
-  arr.push(0.25);
-  input -= 0.25;
+let array = [1, 2, 3, 4, 5];
+for (let i = 0; i < array.length; i++) {
+  console.log("for:", i); // 0 1 2 3 4
 }
-console.log(arr);
-// OUTPUT = [0.25, 0.25, 0.25,0.25, 0.25, 0.25,0.25, 0.25]
