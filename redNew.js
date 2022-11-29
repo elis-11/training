@@ -52,3 +52,12 @@ const group = (objArr, property) => {
 
 let grouped = group(people, "age");
 console.log(grouped);
+// {
+//   '19': [ { name: 'Dwight', age: 19 } ],
+//   '21': [ { name: 'John', age: 21 }, { name: 'Oscar', age: 21 } ],
+//   '55': [
+//     { name: 'Oliver', age: 55 },
+//     { name: 'Michael', age: 55 },
+//     { name: 'Kevin', age: 55 }
+//   ]
+// }

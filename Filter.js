@@ -10,6 +10,42 @@ const result = words.filter((word) => word.length > 6);
 console.log(result);
 // expected output: Array ["exuberant", "destruction", "present"]
 
+const fruitsSales = [
+  { name: "Apple", price: 10 },
+  { name: "Apple", price: 10 },
+  { name: "Banana", price: 15 },
+  { name: "Cherry", price: 7 },
+  { name: "Cherry", price: 7 },
+  { name: "Apple", price: 10 },
+]
+// INPUT: ARRAY / OUTPUT: Number => Sum prices aller Apples
+const res = fruitsSales
+.filter(item => item.name === "Cherry") // [ { name: 'Cherry', price: 7 }, { name: 'Cherry', price: 7 } ]
+.reduce( (total, item) => total + item.price, 0) // Apples Total: 14
+console.log("Apples Total:", res)
+
+const products = [
+  { _id: "p1", name: "Toaster", variants: ["small", "medium", "big"] },
+  { _id: "p2", name: "Fridge", variants: ["small", "medium", "big"] },
+  { _id: "p3", name: "Heater", variants: ["medium"] },
+  { _id: "p4", name: "Waterboiler", variants: ["small", "medium"] },
+  { _id: "p5", name: "Heater", variants: ["medium"] },
+];
+// INPUT: ARRAY
+// OUTPUT: ARRAY
+const filterProd = products.filter((item) => item.variants.length >= 2);
+console.log(filterProd);
+// Challenge: Create array of products which have at least two variants
+/** OUTPUT: 
+ * 
+  [
+    { _id: "p1", name: "Toaster", variants: ["small", "medium", "big"] },
+    { _id: "p2", name: "Fridge", variants: ["small", "medium", "big"] },
+    { _id: "p4", name: "Waterboiler", variants: ["small", "medium"] },
+  ]
+ */
+
+
 //! Filtering out all small values
 function isBigEnough(value) {
   return value >= 10;

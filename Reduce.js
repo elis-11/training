@@ -147,3 +147,16 @@ const reduceRes = fruitsArr.reduce((total, item) => {
   return total
 }, [])
 console.log('reduceRes:', reduceRes) //  [ 'apple', 'banana' ]
+
+const fruitsSales = [
+  { name: "Apple", price: 10 },
+  { name: "Apple", price: 10 },
+  { name: "Banana", price: 15 },
+  { name: "Cherry", price: 7 },
+  { name: "Cherry", price: 7 },
+  { name: "Apple", price: 10 },
+]
+// INPUT: ARRAY / OUTPUT: Number => Sum prices aller Apples
+const res = fruitsSales
+.filter(item => item.name === "Cherry") // [ { name: 'Cherry', price: 7 }, { name: 'Cherry', price: 7 } ]
+.reduce( (total, item) => total + item.price, 0) // Apples Total: 14
