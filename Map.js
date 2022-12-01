@@ -51,6 +51,7 @@ const products = [
   { _id: "p2", name: "Kuehlschrank" },
   { _id: "p3", name: "Wasserkocher" },
 ];
+console.log('0-original-products:', products);
 //! Kuehlschrank => KUEHLSCHRANK
 //! Challenge #1:
 // Wir wollen den Kuehlschrank UPPERCASE machen.  Dafür suchen wir ihn by ID und uppercasen dann Name
@@ -62,33 +63,41 @@ const uppercase = products.map(
   // product._id === "p2" ? { ...product, name: 'KUEHLSCHRANK' } : product
   // product._id === "p2" ? { ...product, name: 'Tralala' } : product
 );
-console.log("uppercase:", uppercase);
-// Output:
-// [
-// { _id: "p1", name: "Toaster" },
-// { _id: "p2", name: "KUEHLSCHRANK" },
-// { _id: "p3", name: "Wasserkocher" }
-// ]
-// Benutze MAP und ternary im Map, um den Kuehlschrank zu finden, eine Copy von Kühlschrank zu machen und "name" upzudaten
+console.log("1-uppercase:", uppercase);
 
 //! Challenge #2:
-// Schreibe eine Function, um ein BELIEBIGES Item uppercase zu machen:
-
-const makeUppercase = (id) => {
-  const productsUpdated = products.map((product) => {
-    product._id === id && product.name === "Kuehlschrank"
+const makeToUppercase = (id) => {
+  const productsUpdated = products.map((product) =>
+    product._id === id
       ? { ...product, name: product.name.toUpperCase() }
-      : product;
-  });
-  console.log(productsUpdated); // => OUTPUT
+      : product
+  );
+  return productsUpdated; // => OUTPUT
 };
-console.log(makeUppercase());
-//! -3- All to UPPERCASE
-const UPPERCASE = products.map((product) => {
+console.log('2-functionUppercase-:',makeToUppercase("p3"));
+
+//! -3- All to UPPERCASE IMMUTABLE
+const upperCase = products.map((product) => {
   product.name = product.name.toUpperCase();
   return product;
 });
-console.log("UPPERCASE: ", UPPERCASE);
-// [{ _id: 'p1', name: 'TOASTER' },
-// { _id: 'p2', name: 'KUEHLSCHRANK' },
-// { _id: 'p3', name: 'WASSERKOCHER' }]
+console.log("3-immutableUpperCase: ", upperCase);
+console.log('products: ', products);
+
+//! Challenge 4:
+const makeLowercase = (id) => {
+  const productsUpdated = products.map((product) =>
+    product._id === id
+      ? { ...product, name: product.name.toLowerCase() }
+      : product
+  );
+  return productsUpdated; // => OUTPUT
+};
+console.log('4-makeLowercase:',makeLowercase("p3"));
+
+//! -5- All to UPPERCASE
+const allToLowerCase = products.map((product) => {
+  return { ...product, name: product.name.toLowerCase() };
+ });
+ console.log("5-allToLowerCase: ", allToLowerCase);
+ 
