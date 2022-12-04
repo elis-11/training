@@ -76,7 +76,7 @@ const makeToUppercase = (id) => {
 };
 console.log('2-functionUppercase-:',makeToUppercase("p3"));
 
-//! -3- All to UPPERCASE IMMUTABLE
+//! -3- All to UPPERCASE MUTABLE
 const upperCase = products.map((product) => {
   product.name = product.name.toUpperCase();
   return product;
