@@ -5,7 +5,7 @@ nums.forEach((num) => {
 
 
 let food = ["mango", "rice", "pepper", "pear"];
-food.forEach(function (foodItem) {
+food.forEach((foodItem) =>{
   console.log("I want to eat " + foodItem);
 });
 // I want to eat mango
