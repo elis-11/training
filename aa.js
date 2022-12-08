@@ -59,7 +59,7 @@ console.log('mapMangoToUpperCase', mapMangoToUpperCase)
 const functionUpdateName = (name, newName) => {
     const updateName = arr.map(item =>{
         return item.name === name
-        ? {...item, name:item.name = newName}
+        ? {...item, name: newName}
         : item
     })
     return updateName
@@ -68,6 +68,17 @@ console.log('functionUpdateName:', functionUpdateName('Broccoli', 'Redis'))
 console.log('origin-arr:', arr)
 
 const findOneObject = arr.find(item =>{
-    return item.name === 'Redis';
+    return item.name === 'Broccoli';
 })
 console.log('findOneObject:', findOneObject)
+
+const functionUpdateNameToRedis = (name, newName) => {
+    const updateName = arr.map(item =>{
+        return item.name === name
+        ? {...item, name: item.name = newName}
+        : item
+    })
+    return updateName
+}
+console.log('functionUpdateNameToRedis:', functionUpdateNameToRedis('Broccoli', 'Redis'))
+console.log('origin-arr:', arr)
