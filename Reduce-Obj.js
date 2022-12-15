@@ -165,3 +165,11 @@ console.log("addBoolean:", addBoolean);
 //   Philadelphia: { category: 'cheese', passed: true },
 //   Tomato: { category: 'vegetable', passed: false },
 //   Apple: { category: 'fruit', passed: true }
+
+//!
+// Generate string of checked items
+var checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
