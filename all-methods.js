@@ -33,7 +33,7 @@ const findBiggest = arr.reduce((total, item)=>{
     ? total
     : item
 })
-console.log('findBiggest', findBiggest); //
+console.log('findBiggest', findBiggest); // { _id: 'p2', name: 'Champignon', volume: 12 }
 
 const displayItems = arr.reduce((total, item)=>{
      total[item.name] = total[item.name] 
@@ -41,12 +41,12 @@ const displayItems = arr.reduce((total, item)=>{
     : 1
     return total
 },{})
-console.log('displayItems', displayItems);
+console.log('displayItems', displayItems); // { _id: 'p2', name: 'Champignon', volume: 12 }
 
 const mapToUpperCase = arr.map(item => {
     return {...item, name: item.name.toUpperCase()}
 })
-console.log('mapToUpperCase:', mapToUpperCase);
+console.log('mapToUpperCase:', mapToUpperCase); // { _id: 'p1', name: 'BROCCOLI', volume: 7 },
 console.log('arr-origin:', arr)
 
 const mapMangoToUpperCase = arr.map(item =>{
@@ -54,7 +54,7 @@ return item.name === 'Mango'
 ? {...item, name: item.name.toUpperCase()}
 : item
 })
-console.log('mapMangoToUpperCase', mapMangoToUpperCase)
+console.log('mapMangoToUpperCase', mapMangoToUpperCase) ; //   { _id: 'p4', name: 'MANGO', volume: 6 },
 
 const functionUpdateName = (name, newName) => {
     const updateName = arr.map(item =>{
@@ -64,13 +64,13 @@ const functionUpdateName = (name, newName) => {
     })
     return updateName
 }
-console.log('functionUpdateName:', functionUpdateName('Broccoli', 'Redis'))
+console.log('functionUpdateName:', functionUpdateName('Broccoli', 'Redis')) // { _id: 'p1', name: 'Redis', volume: 7 },
 console.log('origin-arr:', arr)
 
 const findOneObject = arr.find(item =>{
     return item.name === 'Broccoli';
 })
-console.log('findOneObject:', findOneObject)
+console.log('findOneObject:', findOneObject) // { _id: 'p1', name: 'Broccoli', volume: 7 }
 
 const functionUpdateNameToRedis = (name, newName) => {
     const updateName = arr.map(item =>{
@@ -80,5 +80,5 @@ const functionUpdateNameToRedis = (name, newName) => {
     })
     return updateName
 }
-console.log('functionUpdateNameToRedis:', functionUpdateNameToRedis('Broccoli', 'Redis'))
+console.log('functionUpdateNameToRedis:', functionUpdateNameToRedis('Broccoli', 'Redis')) // { _id: 'p1', name: 'Redis', volume: 7 },
 console.log('origin-arr:', arr)

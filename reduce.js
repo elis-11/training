@@ -25,3 +25,13 @@ const countBy = users.reduce((prev, curr) => ((prev[curr.name] = ++prev[curr.nam
     {}
   );
 console.log('countBy:', countBy) // countBy: { test1: 2, test2: 1, test4: 1, test3: 1 }
+
+//!
+const numbers = [1800, 50, 300, 20, 100];
+// subtract all numbers from first number
+// since 1st element is called as accumulator rather than currentValue
+// 1800 - 50 - 300 - 20 - 100
+let difference = numbers.reduce(
+  (accumulator, currentValue) => accumulator - currentValue
+);
+console.log(difference); // 1330

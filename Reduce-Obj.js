@@ -167,6 +167,21 @@ console.log("addBoolean:", addBoolean);
 //   Apple: { category: 'fruit', passed: true }
 
 //!
+const [filteredCategory, setFilteredCategory] = useState("");
+let filteredCars = cars;
+console.log(filteredCategory)
+  if (filteredCategory) {
+    filteredCars = filteredCars.filter((car) => {
+      return car.category.includes(filteredCategory);
+    });
+  }
+if (priceMin) {
+  filteredCars = filteredCars.filter((car) => {
+    return car.price >= priceMin;
+  });
+}
+
+//!
 // Generate string of checked items
 var checkedItems = checked.length
     ? checked.reduce((total, item) => {

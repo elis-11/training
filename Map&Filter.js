@@ -18,7 +18,6 @@ const productsCopy3 = products.map(product => {
    else
       return product
 })
-
 // Und auch nochmal alle 3 Wege bei Filter:
 // Weg 1: ohne return (=implicit return):
 const productsCopy4 = products.filter(product => 

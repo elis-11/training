@@ -122,6 +122,12 @@ for (let [firstLetter, ...restOfTheWord] of arrFruits) {
   console.log(firstLetter, lastLetter, restOfTheWord);
 }
 
+const allEsReduce = letters.reduce((total, item) => {
+  return item === "e" ? total + 1 : total;
+}, 0);
+console.log("allEsReduce:", allEsReduce); //3
+
+
 let arrWithObjects = [
   {
     name: "Jon",
