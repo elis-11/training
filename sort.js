@@ -16,3 +16,7 @@ const sorted = [
 // console.log(sorted)
 
 console.log(sorted.sort((a, b) => a - b))
+
+const letters = [ "b", "c", "e", "e", "c","f", "j", "d", "d", "d", "d", "a", "b", "a"];
+const sortedLetters = letters.sort()
+console.log(sortedLetters)

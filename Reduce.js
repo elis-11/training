@@ -59,12 +59,12 @@ const groupBy = (srcArray, property) => {
 
     return { ...total, [key]: [...curGroup, item] };
   }, {});
-}
+};
 const groupedPeople = groupBy(people, "age");
-console.log('groupedPeople: ', groupedPeople);
+console.log("groupedPeople: ", groupedPeople);
 
 const groupedNames = groupBy(people, "name");
-console.log('groupedNames: ', groupedNames);
+console.log("groupedNames: ", groupedNames);
 // {
 //   20: [
 //     { name: 'Max', age: 20 },
@@ -91,14 +91,14 @@ const friends = [
     age: 18,
   },
 ];
-console.log({friends});
+console.log({ friends });
 // allbooks - list which will contain all friends' books +
 // additional list contained in initialValue
 const allbooks = friends.reduce(
   (total, item) => [...total, ...item.books],
   ["Alphabet"]
 );
-console.log({allbooks});
+console.log({ allbooks });
 // [
 //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
 //   'Romeo and Juliet', 'The Lord of the Rings',
@@ -106,14 +106,12 @@ console.log({allbooks});
 // ]
 
 //! Remove duplicate items in an array
-const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
+const myArray = [ "b", "c", "e", "e", "c", "d", "d", "d", "d", "a", "b", "a"];
 const noDoublec = myArray.reduce((total, item) => {
-  return !total.includes(item) 
-  ? [...total, item] 
-  : total;
+  return !total.includes(item) ? [...total, item] : total;
 }, []);
 
-console.log('noDoublec:', noDoublec);
+console.log("noDoublec:", noDoublec);
 
 //! Replace .filter().map() with .reduce()
 const numbers = [-5, 6, 2, 0];
@@ -149,14 +147,12 @@ const fruitsSales = [
 const fruitsFilterReduce = fruitsSales
   .filter((item) => item.name === "Cherry") // [ { name: 'Cherry', price: 7 }, { name: 'Cherry', price: 7 } ]
   .reduce((total, item) => total + item.price, 0); // Cherry Total: 14
-console.log('fruitsFilterReduce:', fruitsFilterReduce)
+console.log("fruitsFilterReduce:", fruitsFilterReduce);
 
 const fruitReduce = fruitsSales.reduce((total, item) => {
-  return item.name === 'Cherry'
-  ? total + item.price
-  :total
-}, 0)
-console.log('fruitReduce:', fruitReduce)
+  return item.name === "Cherry" ? total + item.price : total;
+}, 0);
+console.log("fruitReduce:", fruitReduce);
 
 const array = [
   { id: 111, name: "John", age: 29 },
@@ -181,7 +177,7 @@ const convertArrayToObject2 = (array, key) =>
   );
 console.log("convertArrayToObject2:", convertArrayToObject2(array));
 
-//! 
+//!
 const arr = [
   { _id: "p1", name: "Broccoli", volume: 7 },
   { _id: "p2", name: "Champignon", volume: 12 },
