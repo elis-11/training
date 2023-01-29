@@ -1,7 +1,14 @@
-const array = [
-  { _id: "1", name: "Ilon" },
-  { _id: "2", name: "Luisa" },
-];
-let addAge = array.map((obj) => ({ ...obj, age: 27 }));
-console.log({ addAge: addAge });
-console.log({array: addAge})
+const obj = {
+  brand: 'BMW',
+  year: 2010
+}
+console.log(obj.brand)
+
+obj.name = 'car'
+obj.color = 'black'
+console.log(obj);
+obj.location = {}
+obj.location.city= 'San Francisco'
+obj.location.street= 'Tralala'
+console.log(obj)
+
