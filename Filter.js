@@ -123,7 +123,6 @@ const allEsReduce = letters.reduce((total, item) => {
 }, 0);
 console.log("allEsReduce:", allEsReduce); //3
 
-
 let arrWithObjects = [
   {
     name: "Jon",
