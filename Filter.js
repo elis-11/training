@@ -118,8 +118,8 @@ for (let [firstLetter, ...restOfTheWord] of arrFruits) {
   console.log(firstLetter, lastLetter, restOfTheWord);
 }
 
-const allEsReduce = letters.reduce((total, item) => {
-  return item === "e" ? total + 1 : total;
+const allEsReduce = letters.reduce((acc, item) => {
+  return item === "e" ? acc + 1 : acc;
 }, 0);
 console.log("allEsReduce:", allEsReduce); //3
 
@@ -140,7 +140,7 @@ arrWithObjects.forEach(({ name, age: aliasForAge }) => {
 }); // Jon 32 , Elise 33
 
 let arr = [1, 2, 3, 4, 5];
-let newArr = arr.map((element, index, array) => {
+let newArr = arr.map((element) => {
   return element * 2;
 });
 console.log(newArr); // 2, 4, 6, 8, 10

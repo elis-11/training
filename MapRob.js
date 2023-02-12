@@ -16,8 +16,8 @@ console.log("1-product: ", product);
 // Challenge #2:
 // Update Price von Produkt um 1.50 im ORIGINAL Object (=Mutation):
 const muttablePrice = product.map((item) => {
-  item.price = item.price + 1.5
-  return product
+  item.price = item.price + 1.5;
+  return product;
 });
 console.log("2-muttablePrice: ", muttablePrice);
 console.log("2-product: ", product);
@@ -39,20 +39,20 @@ console.log("0-products:", products);
 // Alles wird teurer!
 // Wir erhöhen alle Preise um 5 EUR
 // #1 In COPY (mit map und SPREAD Operator)
-const immPrice = products.map(product =>{
-return {...product, price: Number((product.price + 5).toFixed(2))};
-})
-console.log('3-immPrice:',immPrice)
-console.log('3-products:',products)
+const immPrice = products.map((product) => {
+  return { ...product, price: Number((product.price + 5).toFixed(2)) };
+});
+console.log("3-immPrice:", immPrice);
+console.log("3-products:", products);
 
 // #2 Im Original (mit map und MUTATION)
-const mutPrice = products.map((product) =>{
+const mutPrice = products.map((product) => {
   // return {product, price: Number((product.price + 5).toFixed(2))}
-  product.price= Number((product.price + 5).toFixed(2))
-  return product 
-})
-console.log('4-mutPrice', mutPrice)
-console.log('4-products', products)
+  product.price = Number((product.price + 5).toFixed(2));
+  return product;
+});
+console.log("4-mutPrice", mutPrice);
+console.log("4-products", products);
 
 // Und am Ende:
 // Schreibe eine Function, mit der wir ein Produkt per "title" suchen können und den Preis erhöhen können!
