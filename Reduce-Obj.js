@@ -26,69 +26,6 @@ const products = [
     price: 5.5,
     inside: false,
   },
-  {
-    _id: "p4",
-    status: "1",
-    name: "Tomato",
-    volume: 5,
-    category: "vegetable",
-    price: 0.5,
-    inside: true,
-  },
-  {
-    _id: "p5",
-    status: "1",
-    name: "Mango",
-    volume: 8,
-    category: "fruit",
-    price: 1.5,
-    inside: true,
-  },
-  {
-    _id: "p6",
-    status: "2",
-    name: "Tomato",
-    volume: 5,
-    category: "vegetable",
-    price: 0.5,
-    inside: true,
-  },
-  {
-    _id: "p7",
-    status: "2",
-    name: "Tomato",
-    volume: 5,
-    category: "vegetable",
-    price: 0.5,
-    inside: true,
-  },
-  {
-    _id: "p8",
-    status: "1",
-    name: "Tomato",
-    volume: 5,
-    category: "vegetable",
-    price: 0.5,
-    inside: true,
-  },
-  {
-    _id: "p9",
-    status: "2",
-    name: "Apple",
-    volume: 6,
-    category: "fruit",
-    price: 1,
-    inside: true,
-  },
-  {
-    _id: "p10",
-    status: "2",
-    name: "Mango",
-    volume: 8,
-    category: "fruit",
-    price: 1.5,
-    inside: true,
-  },
 ];
 // total products
 const productsLength = products.length;
@@ -96,7 +33,7 @@ console.log("productsLength:", productsLength); // 10
 
 // count volume = 70
 const countVolume = products.reduce((total, item) => total + item.volume, 0);
-console.log("countVolume:", countVolume);  // 70
+console.log("countVolume:", countVolume); // 70
 
 // count concret item = 2
 const countMangos = products.reduce((total, item) => {
@@ -118,7 +55,7 @@ const concretCategory = products.reduce(
 console.log("concretCategory:", concretCategory); // 5
 
 const productsPrice = products.reduce((total, item) => total + item.price, 0);
-console.log("productsPrice:", productsPrice);  // 15
+console.log("productsPrice:", productsPrice); // 15
 
 // find the biggest
 const biggestProd = products.reduce((total, item) =>
@@ -138,7 +75,7 @@ const noDouble = products.reduce(
   (total, item) => (!total.includes(item.name) ? [...total, item.name] : total),
   []
 );
-console.log("noDouble:", noDouble);// [ 'Broccoli', 'Mango', 'Philadelphia', 'Tomato', 'Apple' ]
+console.log("noDouble:", noDouble); // [ 'Broccoli', 'Mango', 'Philadelphia', 'Tomato', 'Apple' ]
 
 // count status = 2
 const countStatus1 = products.reduce(
@@ -169,12 +106,12 @@ console.log("addBoolean:", addBoolean);
 //!
 const [filteredCategory, setFilteredCategory] = useState("");
 let filteredCars = cars;
-console.log(filteredCategory)
-  if (filteredCategory) {
-    filteredCars = filteredCars.filter((car) => {
-      return car.category.includes(filteredCategory);
-    });
-  }
+console.log(filteredCategory);
+if (filteredCategory) {
+  filteredCars = filteredCars.filter((car) => {
+    return car.category.includes(filteredCategory);
+  });
+}
 if (priceMin) {
   filteredCars = filteredCars.filter((car) => {
     return car.price >= priceMin;
@@ -184,7 +121,7 @@ if (priceMin) {
 //!
 // Generate string of checked items
 var checkedItems = checked.length
-    ? checked.reduce((total, item) => {
-        return total + ", " + item;
-      })
-    : "";
+  ? checked.reduce((total, item) => {
+      return total + ", " + item;
+    })
+  : "";

@@ -4,3 +4,9 @@ console.log(max)
 const min = Math.min(...array);
 console.log(min)
 
+
+// find the biggest
+const biggestProd = products.reduce((acc, curr) =>
+  acc.volume > curr.volume ? acc : curr
+);
+console.log("biggestProd:", biggestProd); //  {_id: 'p3',status: '1',name: 'Philadelphia',volume: 12,category: 'cheese',price: 5.5, inside: false}
