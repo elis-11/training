@@ -32,6 +32,7 @@ let remaining = expenses.reduce(
   salary
 );
 console.log(remaining); // 2700
+
 //! Example 3: Remove Duplicate Items from Array
 let ageGroup = [18, 21, 1, 1, 51, 18, 21, 5, 18, 7, 10];
 let uniqueAgeGroup = ageGroup.reduce(function (accumulator, currentValue) {
@@ -41,6 +42,7 @@ let uniqueAgeGroup = ageGroup.reduce(function (accumulator, currentValue) {
   return accumulator;
 }, []);
 console.log(uniqueAgeGroup); // [ 18, 21, 1, 51, 5, 7, 10 ]
+
 //! Example 4: Grouping Objects by a property
 let people = [
     { name: "John", age: 21 },
